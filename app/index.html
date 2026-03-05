@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GitOps Demo</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #f4f6f8;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    .version {
+      font-size: 32px;
+      margin-top: 20px;
+      color: #2c3e50;
+    }
+
+    .message {
+      font-size: 24px;
+      margin-top: 30px;
+      color: #555;
+    }
+  </style>
+
+</head>
+<body>
+
+<h1>🚀 GitOps Demo</h1>
+
+<div class="version" id="version">
+Chargement de la version...
+</div>
+
+<div class="message">
+Cette application est déployée automatiquement depuis Git
+</div>
+
+<script>
+fetch("version.txt")
+  .then(response => response.text())
+  .then(version => {
+    document.getElementById("version").innerText = "Version : " + version;
+  })
+  .catch(() => {
+    document.getElementById("version").innerText = "Impossible de lire version.txt";
+  });
+</script>
+
+</body>
+</html>
