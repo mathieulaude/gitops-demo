@@ -51,6 +51,10 @@ fetch("version.txt")
   .catch(() => {
     document.getElementById("version").innerText = "Impossible de lire version.txt";
   });
+
+setInterval(() => {
+  location.reload();
+}, 1000);
 </script>
 
 </body>
