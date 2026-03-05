@@ -4,5 +4,6 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./app/index.html:/usr/share/nginx/html/index.html
       - ./config/version.txt:/usr/share/nginx/html/version.txt
+      - ./app/index.html:/usr/share/nginx/html/index.html
+      - ./config/nginx.conf:/etc/nginx/nginx.conf
